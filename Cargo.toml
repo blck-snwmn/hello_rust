@@ -7,7 +7,7 @@ edition = "2018"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-
+tokio = { version = "0.2", features = ["full"] }
 
 [[bin]]
 name = "hello_world"
@@ -16,3 +16,7 @@ path = "src/bin/hello_world.rs"
 [[bin]]
 name = "multi_thread"
 path = "src/bin/multi_thread.rs"
+
+[[bin]]
+name = "async_tokio"
+path = "src/bin/asynchronous_tokio.rs"
