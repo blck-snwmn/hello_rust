@@ -23,6 +23,23 @@ macro_rules! doubles{
     }
 }
 
+macro_rules! sumsum{
+    ( $($($x:expr),*; $($y:expr),*);* )=>{
+        {
+            let mut tmp = 0;
+            $(
+                $(
+                    tmp += $x;
+                )*
+                $(
+                    tmp *= $y;
+                )*
+            )*
+            tmp
+        }
+    };
+}
+
 fn main() {
     show!(1, 2, 3, 4);  // let ar = [1, 2, 3, 4];
     show2!(1, 2, 3, 4);  // let ar = [1, 2, 3, 4];
@@ -32,4 +49,5 @@ fn main() {
     for v in ar {
         println!("doubles! gen {}", v);
     }
+    println!("sumsum!={}", sumsum!(1,2,3; 2,3,4;  10,9,8; 10,11,12));
 }
