@@ -24,3 +24,7 @@ path = "src/bin/asynchronous_tokio.rs"
 [[bin]]
 name = "drop"
 path = "src/bin/drop.rs"
+
+[[bin]]
+name = "use_macro"
+path = "src/bin/use_macro.rs"
