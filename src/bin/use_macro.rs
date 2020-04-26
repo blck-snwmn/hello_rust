@@ -40,6 +40,11 @@ macro_rules! sumsum{
     };
 }
 
+macro_rules! sum_range{
+    // start, end のような表記にも対応する
+    (start $x:expr, end $y:expr) =>(($y - $x + 1)*($x + $y)/2)
+}
+
 fn main() {
     show!(1, 2, 3, 4);  // let ar = [1, 2, 3, 4];
     show2!(1, 2, 3, 4);  // let ar = [1, 2, 3, 4];
@@ -50,4 +55,5 @@ fn main() {
         println!("doubles! gen {}", v);
     }
     println!("sumsum!={}", sumsum!(1,2,3; 2,3,4;  10,9,8; 10,11,12));
+    println!("sum_range!={}", sum_range!(start 5, end 10));
 }
